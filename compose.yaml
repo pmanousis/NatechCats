@@ -1,0 +1,17 @@
+﻿services:
+  natechcats:
+    image: natechcats
+    build:
+      context: .
+      dockerfile: NatechCats/Dockerfile
+  sqlserver:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "YouNeed@Str0ngPasswdHere!"
+      ACCEPT_EULA: "1"
+    volumes:
+      - sqlserver_data:./mssql/data
+volumes:
+  sqlserver_data:

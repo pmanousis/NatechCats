@@ -1,0 +1,6 @@
+@NatechCats_HostAddress = http://localhost:5032
+
+GET {{NatechCats_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
